@@ -23,8 +23,10 @@ dfs = pd.read_html(
 )
 df = dfs[0]
 df.columns = df.columns.to_flat_index()
-df = df[[("Country", "Country"),('Warheads[a]', 'Total')]].astype('int')
+df[('Warheads[a]', 'Total')] = df[('Warheads[a]', 'Total')].str.replace(r"\[.*\]","")
+df[("Country", "Country")] = df[("Country", "Country")].str.replace(r"\[.*\]","")
+df = df[[("Country", "Country"),('Warheads[a]', 'Total')]].astype({('Warheads[a]', 'Total'): 'int32'})
 print(df)
-df.plot(('Country', 'Country'), y = ('Warheads[a]', 'Total'), kind = 'bar')
+df.plot(x = ('Country', 'Country'), y = ('Warheads[a]', 'Total'), kind = 'line')
 plt.show()
 print(df.info())
