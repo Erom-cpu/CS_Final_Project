@@ -27,6 +27,6 @@ df[('Warheads[a]', 'Total')] = df[('Warheads[a]', 'Total')].str.replace(r"\[.*\]
 df[("Country", "Country")] = df[("Country", "Country")].str.replace(r"\[.*\]","")
 df = df[[("Country", "Country"),('Warheads[a]', 'Total')]].astype({('Warheads[a]', 'Total'): 'int32'})
 print(df)
-df.plot(x = ('Country', 'Country'), y = ('Warheads[a]', 'Total'), kind = 'line')
+df.plot(x = ('Country', 'Country'), y = ('Warheads[a]', 'Total'), kind = 'bar')
 plt.show()
 print(df.info())
