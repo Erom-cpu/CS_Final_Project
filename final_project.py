@@ -29,11 +29,11 @@ df[("Country", "Country")] = df[("Country", "Country")].str.replace(r"\[.*\]",""
 df = df[[("Country", "Country"),('Warheads[a]', 'Total')]].astype({('Warheads[a]', 'Total'): 'int32'})
 print(df)
 
-#Code for first graph (Line graph (red))
-df.plot(x = ('Country', 'Country'), y = ('Warheads[a]', 'Total'), lw =2, 
-colormap = 'flag', marker = '.', markersize = 10, title = "Amount of nuclear warheads per state")
+#Code for graph (Line graph (red))
+# df.plot(x = ('Country', 'Country'), y = ('Warheads[a]', 'Total'), lw =2, 
+# colormap = 'flag', marker = '.', markersize = 10, title = "Amount of nuclear warheads per state")
 
-#Code for second graph (Bar graph (green))
+#Code for graph (Bar graph (green))
 df.plot(x = ('Country', 'Country'), y = ('Warheads[a]', 'Total'), kind = 'bar', 
 colormap = 'Accent', title = "Amount of nuclear warheads per state")
 
