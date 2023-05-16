@@ -1,5 +1,3 @@
-import requests #pulls data out of websites
-import bs4 #this allows to call the data in different ways
 import pandas as pd #turns link to html
 import matplotlib.pyplot as plt #plots the data
 from itertools import cycle, islice
@@ -24,5 +22,5 @@ print(df)
 df.plot(x = ('Country', 'Country'), y = ('Warheads[a]', 'Total'), kind = 'bar', 
 colormap = 'Accent', title = "Amount of nuclear warheads per state") #Adds graph color and graph title
 
-plt.show()
-print(df.info())
+plt.show()#Print Graph
+print(df.info())#Prints table information
